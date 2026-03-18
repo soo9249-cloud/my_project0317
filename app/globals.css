@@ -1,0 +1,121 @@
+/* 변경 이유: 0317_design.json의 CSS 변수/배경/폰트/오브(orb) 스타일을 전역 테마로 적용합니다. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root[data-theme="light"] {
+  --bg-gradient: linear-gradient(145deg, #c8cdf2 0%, #d5cbee 25%, #e2ceed 55%, #eed5e6 80%, #f2dce8 100%);
+  --orb-1: rgba(167, 139, 250, 0.45);
+  --orb-2: rgba(244, 114, 182, 0.35);
+  --orb-3: rgba(103, 232, 249, 0.25);
+  --glass: rgba(255, 255, 255, 0.52);
+  --glass-strong: rgba(255, 255, 255, 0.72);
+  --glass-subtle: rgba(255, 255, 255, 0.32);
+  --glass-border: rgba(255, 255, 255, 0.65);
+  --glass-border-subtle: rgba(255, 255, 255, 0.38);
+  --text-primary: #1a1128;
+  --text-secondary: #5c5470;
+  --text-muted: #9e91b0;
+  --text-on-card: #2d2540;
+  --primary: #e040fb;
+  --primary-dark: #c400e0;
+  --primary-light: #f06bff;
+  --primary-glow: rgba(224, 64, 251, 0.35);
+  --primary-soft: rgba(224, 64, 251, 0.1);
+  --coral: #f4a6a0;
+  --coral-text: #c0392b;
+  --teal: #80deea;
+  --teal-text: #0e7490;
+  --gold: #fbbf24;
+  --gold-text: #92400e;
+  --sidebar-bg: rgba(255, 255, 255, 0.6);
+  --sidebar-border: rgba(255, 255, 255, 0.65);
+  --topbar-bg: rgba(255, 255, 255, 0.65);
+  --shadow-card: 0 4px 24px rgba(150, 120, 200, 0.14), 0 1px 4px rgba(150, 120, 200, 0.08);
+  --shadow-card-hover: 0 8px 36px rgba(150, 120, 200, 0.2), 0 2px 8px rgba(150, 120, 200, 0.1);
+  --shadow-btn: 0 4px 18px rgba(224, 64, 251, 0.42);
+  --scrollbar: rgba(197, 184, 240, 0.5);
+  --tl-line: rgba(197, 184, 240, 0.4);
+  --banner-bg: linear-gradient(135deg, #e040fb 0%, #9b59b6 60%, #a8b4f0 100%);
+  --banner-shadow: 0 6px 28px rgba(224, 64, 251, 0.38);
+}
+
+:root[data-theme="dark"] {
+  --bg-gradient: linear-gradient(145deg, #060d1f 0%, #091428 30%, #0c1a35 60%, #0a1628 100%);
+  --orb-1: rgba(56, 103, 214, 0.3);
+  --orb-2: rgba(99, 145, 255, 0.18);
+  --orb-3: rgba(103, 232, 249, 0.14);
+  --glass: rgba(99, 145, 255, 0.08);
+  --glass-strong: rgba(99, 145, 255, 0.13);
+  --glass-subtle: rgba(99, 145, 255, 0.05);
+  --glass-border: rgba(99, 145, 255, 0.22);
+  --glass-border-subtle: rgba(99, 145, 255, 0.12);
+  --text-primary: #e8efff;
+  --text-secondary: #7f9ac7;
+  --text-muted: #3d5a8a;
+  --text-on-card: #ccdaf7;
+  --primary: #6b8fff;
+  --primary-dark: #4a72f5;
+  --primary-light: #8fabff;
+  --primary-glow: rgba(107, 143, 255, 0.32);
+  --primary-soft: rgba(107, 143, 255, 0.12);
+  --coral: #ff8a65;
+  --coral-text: #ff8a65;
+  --teal: #67e8f9;
+  --teal-text: #67e8f9;
+  --gold: #fbbf24;
+  --gold-text: #fbbf24;
+  --sidebar-bg: rgba(9, 20, 40, 0.82);
+  --sidebar-border: rgba(99, 145, 255, 0.14);
+  --topbar-bg: rgba(6, 13, 31, 0.8);
+  --shadow-card: 0 4px 28px rgba(0, 8, 30, 0.5), 0 1px 4px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 8px 40px rgba(0, 8, 30, 0.65);
+  --shadow-btn: 0 4px 20px rgba(107, 143, 255, 0.4);
+  --scrollbar: rgba(55, 85, 150, 0.35);
+  --tl-line: rgba(55, 85, 150, 0.28);
+  --banner-bg: linear-gradient(135deg, #1a3a6e 0%, #1e4d8c 45%, #2563b0 100%);
+  --banner-shadow: 0 6px 28px rgba(37, 99, 176, 0.45);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Nunito, Poppins, system-ui, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+}
+
+.ambient-orb {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  border-radius: 9999px;
+}
+
+.ambient-orb--1 {
+  width: 420px;
+  height: 420px;
+  top: -80px;
+  left: -60px;
+  background: var(--orb-1);
+}
+
+.ambient-orb--2 {
+  width: 340px;
+  height: 340px;
+  top: 40%;
+  right: -60px;
+  background: var(--orb-2);
+}
+
+.ambient-orb--3 {
+  width: 280px;
+  height: 280px;
+  bottom: -40px;
+  left: 30%;
+  background: var(--orb-3);
+}

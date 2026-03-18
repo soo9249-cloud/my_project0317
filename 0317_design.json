@@ -1,0 +1,729 @@
+{
+  "_meta": {
+    "project": "정신줄 구조대",
+    "version": "1.0.0",
+    "date": "2025-03-17",
+    "aesthetic": "Aurora Glassmorphism — 라이트(라벤더/로즈 그라디언트 배경 + 반투명 화이트 카드) / 다크(딥 네이비/인디고 배경 + 블루 틴트 글래스 카드)",
+    "iconLibrary": "lucide-react (only)",
+    "usage": "Cursor에게 이 파일을 엄격하게 준수하여 UI를 구현하도록 지시할 것. 이모지 사용 금지. 모든 아이콘은 lucide-react만 사용."
+  },
+
+  "colorSystem": {
+    "light": {
+      "background": {
+        "base": "linear-gradient(145deg, #c8cdf2 0%, #d5cbee 25%, #e2ceed 55%, #eed5e6 80%, #f2dce8 100%)",
+        "orb1": "rgba(167, 139, 250, 0.45)",
+        "orb2": "rgba(244, 114, 182, 0.35)",
+        "orb3": "rgba(103, 232, 249, 0.25)"
+      },
+      "glass": {
+        "default": "rgba(255, 255, 255, 0.52)",
+        "strong": "rgba(255, 255, 255, 0.72)",
+        "subtle": "rgba(255, 255, 255, 0.32)",
+        "border": "rgba(255, 255, 255, 0.65)",
+        "borderSubtle": "rgba(255, 255, 255, 0.38)"
+      },
+      "text": {
+        "primary": "#1a1128",
+        "secondary": "#5c5470",
+        "muted": "#9e91b0",
+        "onCard": "#2d2540"
+      },
+      "primary": {
+        "default": "#e040fb",
+        "dark": "#c400e0",
+        "light": "#f06bff",
+        "glow": "rgba(224, 64, 251, 0.35)",
+        "soft": "rgba(224, 64, 251, 0.10)"
+      },
+      "accent": {
+        "coral": "#f4a6a0",
+        "coralText": "#c0392b",
+        "teal": "#80deea",
+        "tealText": "#0e7490",
+        "periwinkle": "#a8b4f0",
+        "gold": "#fbbf24",
+        "goldText": "#92400e"
+      },
+      "surface": {
+        "sidebar": "rgba(255, 255, 255, 0.60)",
+        "sidebarBorder": "rgba(255, 255, 255, 0.65)",
+        "topbar": "rgba(255, 255, 255, 0.65)",
+        "topbarBorder": "rgba(255, 255, 255, 0.38)"
+      },
+      "shadow": {
+        "card": "0 4px 24px rgba(150, 120, 200, 0.14), 0 1px 4px rgba(150, 120, 200, 0.08)",
+        "cardHover": "0 8px 36px rgba(150, 120, 200, 0.20), 0 2px 8px rgba(150, 120, 200, 0.10)",
+        "button": "0 4px 18px rgba(224, 64, 251, 0.42)"
+      },
+      "scrollbar": "rgba(197, 184, 240, 0.50)",
+      "timelineLine": "rgba(197, 184, 240, 0.40)",
+      "banner": {
+        "background": "linear-gradient(135deg, #e040fb 0%, #9b59b6 60%, #a8b4f0 100%)",
+        "shadow": "0 6px 28px rgba(224, 64, 251, 0.38)"
+      }
+    },
+    "dark": {
+      "background": {
+        "base": "linear-gradient(145deg, #060d1f 0%, #091428 30%, #0c1a35 60%, #0a1628 100%)",
+        "orb1": "rgba(56, 103, 214, 0.30)",
+        "orb2": "rgba(99, 145, 255, 0.18)",
+        "orb3": "rgba(103, 232, 249, 0.14)"
+      },
+      "glass": {
+        "default": "rgba(99, 145, 255, 0.08)",
+        "strong": "rgba(99, 145, 255, 0.13)",
+        "subtle": "rgba(99, 145, 255, 0.05)",
+        "border": "rgba(99, 145, 255, 0.22)",
+        "borderSubtle": "rgba(99, 145, 255, 0.12)"
+      },
+      "text": {
+        "primary": "#e8efff",
+        "secondary": "#7f9ac7",
+        "muted": "#3d5a8a",
+        "onCard": "#ccdaf7"
+      },
+      "primary": {
+        "default": "#6b8fff",
+        "dark": "#4a72f5",
+        "light": "#8fabff",
+        "glow": "rgba(107, 143, 255, 0.32)",
+        "soft": "rgba(107, 143, 255, 0.12)"
+      },
+      "accent": {
+        "coral": "#ff8a65",
+        "coralText": "#ff8a65",
+        "teal": "#67e8f9",
+        "tealText": "#67e8f9",
+        "periwinkle": "rgba(103, 232, 249, 0.25)",
+        "gold": "#fbbf24",
+        "goldText": "#fbbf24"
+      },
+      "surface": {
+        "sidebar": "rgba(9, 20, 40, 0.82)",
+        "sidebarBorder": "rgba(99, 145, 255, 0.14)",
+        "topbar": "rgba(6, 13, 31, 0.80)",
+        "topbarBorder": "rgba(99, 145, 255, 0.12)"
+      },
+      "shadow": {
+        "card": "0 4px 28px rgba(0, 8, 30, 0.50), 0 1px 4px rgba(0, 0, 0, 0.35)",
+        "cardHover": "0 8px 40px rgba(0, 8, 30, 0.65)",
+        "button": "0 4px 20px rgba(107, 143, 255, 0.40)"
+      },
+      "scrollbar": "rgba(55, 85, 150, 0.35)",
+      "timelineLine": "rgba(55, 85, 150, 0.28)",
+      "banner": {
+        "background": "linear-gradient(135deg, #1a3a6e 0%, #1e4d8c 45%, #2563b0 100%)",
+        "shadow": "0 6px 28px rgba(37, 99, 176, 0.45)"
+      }
+    }
+  },
+
+  "cssVariables": {
+    "comment": ":root[data-theme='light'] 와 :root[data-theme='dark'] 각각 선언",
+    "light": {
+      "--bg-gradient": "linear-gradient(145deg, #c8cdf2 0%, #d5cbee 25%, #e2ceed 55%, #eed5e6 80%, #f2dce8 100%)",
+      "--orb-1": "rgba(167,139,250,0.45)",
+      "--orb-2": "rgba(244,114,182,0.35)",
+      "--orb-3": "rgba(103,232,249,0.25)",
+      "--glass": "rgba(255,255,255,0.52)",
+      "--glass-strong": "rgba(255,255,255,0.72)",
+      "--glass-subtle": "rgba(255,255,255,0.32)",
+      "--glass-border": "rgba(255,255,255,0.65)",
+      "--glass-border-subtle": "rgba(255,255,255,0.38)",
+      "--text-primary": "#1a1128",
+      "--text-secondary": "#5c5470",
+      "--text-muted": "#9e91b0",
+      "--text-on-card": "#2d2540",
+      "--primary": "#e040fb",
+      "--primary-dark": "#c400e0",
+      "--primary-light": "#f06bff",
+      "--primary-glow": "rgba(224,64,251,0.35)",
+      "--primary-soft": "rgba(224,64,251,0.10)",
+      "--coral": "#f4a6a0",
+      "--coral-text": "#c0392b",
+      "--teal": "#80deea",
+      "--teal-text": "#0e7490",
+      "--gold": "#fbbf24",
+      "--gold-text": "#92400e",
+      "--sidebar-bg": "rgba(255,255,255,0.60)",
+      "--sidebar-border": "rgba(255,255,255,0.65)",
+      "--topbar-bg": "rgba(255,255,255,0.65)",
+      "--shadow-card": "0 4px 24px rgba(150,120,200,0.14),0 1px 4px rgba(150,120,200,0.08)",
+      "--shadow-card-hover": "0 8px 36px rgba(150,120,200,0.20),0 2px 8px rgba(150,120,200,0.10)",
+      "--shadow-btn": "0 4px 18px rgba(224,64,251,0.42)",
+      "--scrollbar": "rgba(197,184,240,0.50)",
+      "--tl-line": "rgba(197,184,240,0.40)",
+      "--banner-bg": "linear-gradient(135deg,#e040fb 0%,#9b59b6 60%,#a8b4f0 100%)",
+      "--banner-shadow": "0 6px 28px rgba(224,64,251,0.38)"
+    },
+    "dark": {
+      "--bg-gradient": "linear-gradient(145deg, #060d1f 0%, #091428 30%, #0c1a35 60%, #0a1628 100%)",
+      "--orb-1": "rgba(56,103,214,0.30)",
+      "--orb-2": "rgba(99,145,255,0.18)",
+      "--orb-3": "rgba(103,232,249,0.14)",
+      "--glass": "rgba(99,145,255,0.08)",
+      "--glass-strong": "rgba(99,145,255,0.13)",
+      "--glass-subtle": "rgba(99,145,255,0.05)",
+      "--glass-border": "rgba(99,145,255,0.22)",
+      "--glass-border-subtle": "rgba(99,145,255,0.12)",
+      "--text-primary": "#e8efff",
+      "--text-secondary": "#7f9ac7",
+      "--text-muted": "#3d5a8a",
+      "--text-on-card": "#ccdaf7",
+      "--primary": "#6b8fff",
+      "--primary-dark": "#4a72f5",
+      "--primary-light": "#8fabff",
+      "--primary-glow": "rgba(107,143,255,0.32)",
+      "--primary-soft": "rgba(107,143,255,0.12)",
+      "--coral": "#ff8a65",
+      "--coral-text": "#ff8a65",
+      "--teal": "#67e8f9",
+      "--teal-text": "#67e8f9",
+      "--gold": "#fbbf24",
+      "--gold-text": "#fbbf24",
+      "--sidebar-bg": "rgba(9,20,40,0.82)",
+      "--sidebar-border": "rgba(99,145,255,0.14)",
+      "--topbar-bg": "rgba(6,13,31,0.80)",
+      "--shadow-card": "0 4px 28px rgba(0,8,30,0.50),0 1px 4px rgba(0,0,0,0.35)",
+      "--shadow-card-hover": "0 8px 40px rgba(0,8,30,0.65)",
+      "--shadow-btn": "0 4px 20px rgba(107,143,255,0.40)",
+      "--scrollbar": "rgba(55,85,150,0.35)",
+      "--tl-line": "rgba(55,85,150,0.28)",
+      "--banner-bg": "linear-gradient(135deg,#1a3a6e 0%,#1e4d8c 45%,#2563b0 100%)",
+      "--banner-shadow": "0 6px 28px rgba(37,99,176,0.45)"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "primary": "'Nunito', 'Poppins', sans-serif",
+      "display": "'Nunito', sans-serif",
+      "body": "'Poppins', sans-serif",
+      "mono": "'Fira Code', 'Courier New', monospace"
+    },
+    "googleFontsImport": "https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap",
+    "scale": {
+      "logoText":      { "size": "14.5px", "weight": "800", "letterSpacing": "-0.3px" },
+      "pageTitle":     { "size": "16px",   "weight": "800", "letterSpacing": "-0.3px" },
+      "sectionTitle":  { "size": "13.5px", "weight": "800" },
+      "cardTitle":     { "size": "12.5px", "weight": "700" },
+      "cardSubtitle":  { "size": "11px",   "weight": "500" },
+      "statValue":     { "size": "28px",   "weight": "800", "letterSpacing": "-1px", "fontFamily": "Nunito" },
+      "statLabel":     { "size": "11px",   "weight": "600" },
+      "navItem":       { "size": "13px",   "weight": "600" },
+      "navLabel":      { "size": "9.5px",  "weight": "700", "letterSpacing": "1px", "textTransform": "uppercase" },
+      "tag":           { "size": "10px",   "weight": "700" },
+      "timeLabel":     { "size": "10.5px", "weight": "500", "fontFamily": "Poppins" },
+      "todoTitle":     { "size": "12.5px", "weight": "700" },
+      "bodyText":      { "size": "12px",   "weight": "500" },
+      "caption":       { "size": "10.5px", "weight": "500" },
+      "buttonText":    { "size": "12px",   "weight": "700" },
+      "bannerTitle":   { "size": "13.5px", "weight": "800" },
+      "bannerSubtitle":{ "size": "11.5px", "weight": "500" }
+    }
+  },
+
+  "spacing": {
+    "xs":   "4px",
+    "sm":   "8px",
+    "md":   "12px",
+    "lg":   "16px",
+    "xl":   "20px",
+    "2xl":  "24px",
+    "3xl":  "32px",
+    "pageH": "24px",
+    "pageV": "20px",
+    "cardPadding": "16px 18px",
+    "cardPaddingSm": "12px 14px",
+    "sectionGap": "16px",
+    "itemGap": "12px",
+    "sidebarWidth": "220px",
+    "topbarHeight": "58px"
+  },
+
+  "borderRadius": {
+    "xs":     "6px",
+    "sm":     "8px",
+    "md":     "12px",
+    "lg":     "16px",
+    "xl":     "20px",
+    "2xl":    "24px",
+    "pill":   "9999px",
+    "circle": "50%",
+    "card":   "20px",
+    "cardSm": "14px",
+    "button": "9999px",
+    "input":  "12px",
+    "tag":    "9999px",
+    "navItem":"12px",
+    "icon":   "10px"
+  },
+
+  "glassmorphism": {
+    "instruction": "모든 카드/패널에 backdrop-filter: blur() 적용. 배경은 반투명. 테두리는 glass-border 변수 사용.",
+    "card": {
+      "background": "var(--glass)",
+      "backdropFilter": "blur(16px)",
+      "WebkitBackdropFilter": "blur(16px)",
+      "border": "1px solid var(--glass-border)",
+      "boxShadow": "var(--shadow-card)",
+      "borderRadius": "20px"
+    },
+    "cardStrong": {
+      "background": "var(--glass-strong)",
+      "backdropFilter": "blur(20px)",
+      "WebkitBackdropFilter": "blur(20px)",
+      "border": "1px solid var(--glass-border)",
+      "boxShadow": "var(--shadow-card)",
+      "borderRadius": "20px"
+    },
+    "sidebar": {
+      "background": "var(--sidebar-bg)",
+      "backdropFilter": "blur(20px)",
+      "WebkitBackdropFilter": "blur(20px)",
+      "borderRight": "1px solid var(--sidebar-border)"
+    },
+    "topbar": {
+      "background": "var(--topbar-bg)",
+      "backdropFilter": "blur(20px)",
+      "WebkitBackdropFilter": "blur(20px)",
+      "borderBottom": "1px solid var(--glass-border-subtle)"
+    }
+  },
+
+  "ambientOrbs": {
+    "instruction": "배경에 3개의 흐릿한 원형 오브를 position: fixed로 배치. pointer-events: none. z-index: 0.",
+    "orb1": { "size": "420px", "top": "-80px", "left": "-60px",  "color": "var(--orb-1)", "blur": "80px" },
+    "orb2": { "size": "340px", "top": "40%",   "right": "-60px", "color": "var(--orb-2)", "blur": "80px" },
+    "orb3": { "size": "280px", "bottom": "-40px", "left": "30%", "color": "var(--orb-3)", "blur": "80px" }
+  },
+
+  "components": {
+
+    "layout": {
+      "root": "display: flex; height: 100vh; overflow: hidden; background: var(--bg-gradient);",
+      "sidebar": "width: 220px; min-width: 220px; display: flex; flex-direction: column; padding: 24px 0; z-index: 10;",
+      "main": "flex: 1; display: flex; flex-direction: column; overflow: hidden; z-index: 1;",
+      "content": "flex: 1; overflow-y: auto; padding: var(--pageV) var(--pageH); display: flex; flex-direction: column; gap: 16px;"
+    },
+
+    "logo": {
+      "iconSize": "36px",
+      "iconBorderRadius": "12px",
+      "iconBackground": "linear-gradient(135deg, var(--primary), var(--primary-dark))",
+      "iconShadow": "0 4px 14px var(--primary-glow)",
+      "icon": "lucide: Brain (또는 Zap)",
+      "textStyle": "Nunito 800 14.5px"
+    },
+
+    "navigation": {
+      "groupLabel": "Nunito 700 9.5px uppercase, color: var(--text-muted), letterSpacing: 1px",
+      "item": {
+        "padding": "9px 12px",
+        "borderRadius": "12px",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "defaultColor": "var(--text-secondary)",
+        "hoverBackground": "var(--glass-strong)",
+        "hoverColor": "var(--text-primary)",
+        "activeBackground": "var(--primary-soft)",
+        "activeColor": "var(--primary)",
+        "activeBorder": "inset 0 0 0 1px rgba(현재primary, 0.2)"
+      },
+      "badge": {
+        "background_light": "linear-gradient(135deg, var(--primary), var(--primary-dark))",
+        "background_dark": "linear-gradient(135deg, #4a72f5, #2a52d5)",
+        "color": "white",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "borderRadius": "9999px",
+        "padding": "2px 7px"
+      },
+      "badgeGold": {
+        "background": "linear-gradient(135deg, #fbbf24, #f59e0b)",
+        "shadow": "0 2px 8px rgba(251,191,36,0.4)"
+      }
+    },
+
+    "topbar": {
+      "height": "58px",
+      "padding": "0 24px",
+      "viewToggle": {
+        "containerBackground": "var(--glass)",
+        "containerBorder": "1px solid var(--glass-border)",
+        "containerBorderRadius": "9999px",
+        "containerPadding": "3px",
+        "buttonActive": "background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; border-radius: 9999px; shadow: 0 2px 10px var(--primary-glow)",
+        "buttonInactive": "background: transparent; color: var(--text-muted)"
+      },
+      "themePill": {
+        "background": "var(--glass)",
+        "border": "1px solid var(--glass-border)",
+        "borderRadius": "9999px",
+        "padding": "4px 12px",
+        "icon": "lucide: Moon / Sun"
+      },
+      "dateChip": {
+        "background": "var(--glass-strong)",
+        "border": "1px solid var(--glass-border)",
+        "borderRadius": "9999px",
+        "padding": "4px 12px"
+      }
+    },
+
+    "rewardBanner": {
+      "background": "var(--banner-bg)",
+      "boxShadow": "var(--banner-shadow)",
+      "borderRadius": "20px",
+      "padding": "16px 20px",
+      "layout": "flex, align-center, gap: 14px",
+      "icon": "lucide: PartyPopper (size 22px, color: white)",
+      "titleStyle": "Nunito 800 13.5px white",
+      "subtitleStyle": "Nunito 500 11.5px rgba(255,255,255,0.85)",
+      "claimButton": {
+        "background": "rgba(255,255,255,0.22)",
+        "border": "1px solid rgba(255,255,255,0.40)",
+        "borderRadius": "9999px",
+        "color": "white",
+        "padding": "7px 16px",
+        "fontWeight": "700"
+      },
+      "decorativeCircles": "position:absolute 반원형 배경 요소 2개, rgba(255,255,255,0.06~0.08)"
+    },
+
+    "statCard": {
+      "base": "glassmorphism.card 적용",
+      "padding": "16px",
+      "iconWrap": {
+        "size": "34px",
+        "borderRadius": "10px",
+        "variants": {
+          "pink":       "background: rgba(224,64,251,0.15)",
+          "coral":      "background: rgba(244,166,160,0.20)",
+          "periwinkle": "background: rgba(168,180,240,0.20)",
+          "teal":       "background: rgba(128,222,234,0.20)"
+        },
+        "icon": "lucide 아이콘 size 16px"
+      },
+      "trendBadge": {
+        "up":   "background: rgba(128,222,234,0.20); color: var(--teal-text); fontSize: 10px; fontWeight: 700; borderRadius: 9999px; padding: 3px 8px",
+        "warn": "background: rgba(244,166,160,0.20); color: var(--coral-text); 위와 동일"
+      },
+      "value": "Nunito 800 28px var(--text-primary) letterSpacing: -1px",
+      "label": "Nunito 600 11px var(--text-muted)",
+      "progressBar": {
+        "height": "3px",
+        "background": "var(--glass-border-subtle)",
+        "fillBorderRadius": "9999px",
+        "variants": {
+          "primary": "linear-gradient(90deg, var(--primary), var(--primary-dark))",
+          "coral":   "linear-gradient(90deg, var(--coral), #e05555)",
+          "teal":    "linear-gradient(90deg, var(--teal), #3baabd)"
+        }
+      },
+      "bottomAccentLine": {
+        "height": "2px",
+        "position": "absolute bottom-0 left-0 right-0",
+        "borderRadius": "0 0 20px 20px",
+        "variants": {
+          "pink":  "var(--primary)",
+          "coral": "var(--coral)",
+          "periwinkle": "var(--periwinkle, #a8b4f0)",
+          "teal":  "var(--teal)"
+        }
+      }
+    },
+
+    "timeline": {
+      "wrap": "padding: 16px 18px; overflow-y: auto; max-height: 360px",
+      "row": "display: flex; gap: 12px",
+      "timeCol": "width: 42px; text-align: right; padding-top: 3px; font: Poppins 500 10.5px var(--text-muted)",
+      "track": {
+        "verticalLine": "position: absolute; left: -6px; top: 8px; bottom: 0; width: 1px; background: var(--tl-line)",
+        "dot": {
+          "size": "7px",
+          "position": "absolute left: -9px top: 7px",
+          "border": "2px solid var(--glass-border)",
+          "variants": {
+            "primary":    "background: var(--primary); boxShadow: 0 0 0 3px var(--primary-soft)",
+            "coral":      "background: var(--coral)",
+            "teal":       "background: var(--teal)",
+            "periwinkle": "background: #a8b4f0",
+            "done":       "background: var(--text-muted)"
+          }
+        }
+      },
+      "card": {
+        "borderRadius": "12px",
+        "padding": "10px 13px",
+        "borderLeft": "2.5px solid transparent",
+        "hoverTransform": "translateX(2px)",
+        "variants": {
+          "primary":    "background: var(--primary-soft);   borderLeftColor: var(--primary)",
+          "coral":      "background: rgba(244,166,160,0.13); borderLeftColor: var(--coral)",
+          "teal":       "background: rgba(128,222,234,0.12); borderLeftColor: var(--teal)",
+          "periwinkle": "background: rgba(168,180,240,0.13); borderLeftColor: #a8b4f0",
+          "done":       "background: var(--glass-subtle);    borderLeftColor: var(--text-muted); opacity: 0.55"
+        },
+        "title":    "Nunito 700 12.5px var(--text-on-card)",
+        "meta":     "Nunito 500 11px var(--text-muted)"
+      },
+      "nowIndicator": {
+        "label": "Nunito 800 10px var(--primary), background: var(--primary-soft), borderRadius: 9999px, padding: 2px 9px",
+        "line":  "flex:1; height:1px; background: linear-gradient(90deg, var(--primary), transparent)"
+      }
+    },
+
+    "tags": {
+      "base": "Nunito 700 10px, padding: 2px 8px, borderRadius: 9999px",
+      "variants": {
+        "primary":    "background: var(--primary-soft);        color: var(--primary)",
+        "coral":      "background: rgba(244,166,160,0.20);     color: var(--coral-text)",
+        "teal":       "background: rgba(128,222,234,0.18);     color: var(--teal-text)",
+        "done":       "background: var(--glass-subtle);        color: var(--text-muted)",
+        "gold":       "background: rgba(251,191,36,0.15);      color: var(--gold-text)"
+      }
+    },
+
+    "completionRing": {
+      "size": "72px",
+      "strokeWidth": "7px",
+      "trackColor": "var(--glass-border)",
+      "fillGradient": {
+        "light": "linear-gradient(#e040fb, #9b59b6)",
+        "dark":  "linear-gradient(#6b8fff, #4a72f5)"
+      },
+      "lineCap": "round",
+      "transform": "rotate(-90deg)",
+      "centerValue": "Nunito 800 19px var(--text-primary)",
+      "centerLabel": "Nunito 600 9px var(--text-muted)",
+      "rewardChip": {
+        "background_light": "rgba(251,191,36,0.14)",
+        "background_dark":  "rgba(251,191,36,0.12)",
+        "color_light": "#b45309",
+        "color_dark":  "#fbbf24",
+        "border_light": "1px solid rgba(251,191,36,0.30)",
+        "border_dark":  "1px solid rgba(251,191,36,0.20)",
+        "borderRadius": "9999px",
+        "padding": "4px 10px",
+        "fontSize": "11px",
+        "fontWeight": "700",
+        "icon": "lucide: Gift (size 12px)"
+      }
+    },
+
+    "todoItem": {
+      "padding": "9px 6px",
+      "borderBottom": "1px solid var(--glass-border-subtle)",
+      "hoverBackground": "var(--primary-soft)",
+      "hoverPaddingLeft": "10px",
+      "checkCircle": {
+        "size": "18px",
+        "borderRadius": "50%",
+        "borderDefault": "2px solid var(--glass-border)",
+        "borderUrgent":  "2px solid var(--coral)",
+        "doneBackground": "linear-gradient(135deg, var(--primary), #9b59b6) [light] / linear-gradient(135deg, #6b8fff, #4a72f5) [dark]",
+        "doneIcon": "lucide: Check size 10px color white"
+      },
+      "importanceDot": {
+        "size": "5px",
+        "borderRadius": "50%",
+        "high":   "var(--coral)",
+        "medium": "var(--gold)",
+        "low":    "var(--text-muted)"
+      },
+      "dueBadge": {
+        "today": "background: rgba(244,166,160,0.20); color: var(--coral-text)",
+        "soon":  "background: rgba(251,191,36,0.15);  color: var(--gold-text)",
+        "ok":    "background: rgba(128,222,234,0.15); color: var(--teal-text)"
+      }
+    },
+
+    "addButton": {
+      "border": "1.5px dashed var(--glass-border)",
+      "borderRadius": "12px",
+      "padding": "8px",
+      "color": "var(--text-muted)",
+      "hoverBorder": "var(--primary)",
+      "hoverColor": "var(--primary)",
+      "hoverBackground": "var(--primary-soft)",
+      "icon": "lucide: Plus size 14px"
+    },
+
+    "teamItem": {
+      "padding": "11px 16px",
+      "borderBottom": "1px solid var(--glass-border-subtle)",
+      "hoverBackground": "var(--glass-subtle)",
+      "avatarSize": "34px",
+      "avatarBorderRadius": "10px",
+      "icon": "lucide: Users 또는 팀 이니셜",
+      "statusBadge": {
+        "confirmed": "background: rgba(128,222,234,0.18); color: var(--teal-text)",
+        "pending":   "background: rgba(251,191,36,0.15);  color: var(--gold-text)"
+      }
+    },
+
+    "panelHeader": {
+      "padding": "14px 18px",
+      "borderBottom": "1px solid var(--glass-border-subtle)",
+      "iconSize": "14px",
+      "titleStyle": "Nunito 800 13.5px var(--text-primary)",
+      "actionButton": {
+        "color": "var(--primary)",
+        "background": "var(--primary-soft)",
+        "borderRadius": "9999px",
+        "padding": "4px 10px",
+        "fontSize": "12px",
+        "fontWeight": "700"
+      }
+    },
+
+    "primaryButton": {
+      "background": "linear-gradient(135deg, var(--primary), var(--primary-dark))",
+      "color": "white",
+      "borderRadius": "9999px",
+      "padding": "10px 24px",
+      "fontWeight": "700",
+      "fontSize": "13px",
+      "boxShadow": "var(--shadow-btn)",
+      "hoverTransform": "translateY(-1px)",
+      "hoverShadow": "더 강한 그림자",
+      "icon": "lucide 아이콘 size 16px"
+    },
+
+    "inputField": {
+      "background": "var(--glass-strong)",
+      "border": "1px solid var(--glass-border)",
+      "borderRadius": "12px",
+      "padding": "10px 14px",
+      "fontSize": "13px",
+      "color": "var(--text-primary)",
+      "placeholder": "var(--text-muted)",
+      "focusBorder": "var(--primary)",
+      "focusShadow": "0 0 0 3px var(--primary-soft)"
+    },
+
+    "confetti": {
+      "library": "canvas-confetti (npm install canvas-confetti)",
+      "trigger": "완료율 90% 달성 시 모달과 함께 실행",
+      "config": {
+        "particleCount": 80,
+        "spread": 60,
+        "origin": "{ y: 0.5 }",
+        "colors_light": ["#e040fb", "#c400e0", "#a8b4f0", "#ffffff", "#f4a6a0"],
+        "colors_dark":  ["#6b8fff", "#4a72f5", "#67e8f9", "#ffffff", "#fbbf24"],
+        "gravity": 0.8,
+        "scalar": 0.9
+      },
+      "modal": {
+        "background": "var(--glass-strong)",
+        "backdropFilter": "blur(20px)",
+        "borderRadius": "24px",
+        "border": "1px solid var(--glass-border)",
+        "shadow": "var(--shadow-card-hover)",
+        "icon": "lucide: Trophy size 32px color var(--primary)",
+        "title": "Nunito 800 18px",
+        "subtitle": "Nunito 500 13px var(--text-secondary)",
+        "rewardText": "Nunito 700 15px var(--primary)"
+      }
+    }
+  },
+
+  "motion": {
+    "duration": {
+      "fast":     "150ms",
+      "normal":   "250ms",
+      "slow":     "400ms",
+      "verySlow": "600ms"
+    },
+    "easing": {
+      "default": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "spring":  "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easeOut": "cubic-bezier(0, 0, 0.2, 1)"
+    },
+    "themeTransition": "background 0.5s ease, color 0.3s ease",
+    "cardHover": "transform: translateY(-1px); transition: box-shadow 0.25s, transform 0.25s",
+    "todoCheck": "all 0.2s cubic-bezier(0.34,1.56,0.64,1)",
+    "navItem":   "all 0.18s ease"
+  },
+
+  "responsive": {
+    "breakpoints": {
+      "mobile":  "max-width: 768px",
+      "tablet":  "max-width: 1100px",
+      "desktop": "min-width: 1100px"
+    },
+    "rules": {
+      "mobile":  "사이드바 숨김(display:none) / 하단 네비 표시 / 1열 레이아웃",
+      "tablet":  "stats-row 2열 / main-grid 1열 / right-col 가로 스크롤",
+      "desktop": "stats-row 4열 / main-grid 타임라인+우측패널 2열 / 팀 상세 페이지 좌우 2열"
+    },
+    "teamDetailPage": {
+      "mobile":  "세로 스크롤 (일정조율 → 결과 → 채팅)",
+      "desktop": "좌: 일정조율+결과 / 우: 실시간 채팅 (md:grid-cols-2)"
+    }
+  },
+
+  "iconGuide": {
+    "library": "lucide-react",
+    "install": "npm install lucide-react",
+    "usage": "import { IconName } from 'lucide-react'",
+    "defaultSize": "16px",
+    "navIcons": {
+      "dashboard":  "LayoutDashboard",
+      "todos":      "CheckSquare",
+      "teams":      "Users",
+      "schedule":   "CalendarDays",
+      "chat":       "MessageCircle",
+      "settings":   "Settings"
+    },
+    "actionIcons": {
+      "add":        "Plus",
+      "check":      "Check",
+      "edit":       "Pencil",
+      "delete":     "Trash2",
+      "chevron":    "ChevronRight",
+      "more":       "MoreHorizontal",
+      "share":      "Share2",
+      "copy":       "Copy"
+    },
+    "statusIcons": {
+      "urgent":     "AlertCircle",
+      "done":       "CheckCircle2",
+      "team":       "Users",
+      "reward":     "Gift",
+      "trophy":     "Trophy",
+      "clock":      "Clock",
+      "calendar":   "Calendar",
+      "moon":       "Moon",
+      "sun":        "Sun",
+      "brain":      "Brain",
+      "zap":        "Zap"
+    },
+    "forbidden": "이모지(emoji) 절대 사용 금지. 스트림릿 스타일 이모티콘 사용 금지. 오직 lucide-react 아이콘만 사용."
+  },
+
+  "promptForCursor": {
+    "instruction": "0317_design.json 파일을 엄격하게 준수해서 구현해줘.",
+    "rules": [
+      "모든 색상은 반드시 cssVariables의 CSS 변수를 사용할 것 (하드코딩 금지)",
+      "data-theme='light' / data-theme='dark' 를 html 태그에 적용하고 두 테마 모두 구현할 것",
+      "라이트모드: 라벤더/로즈 그라디언트 배경 + 화이트 반투명 글래스 카드",
+      "다크모드: 딥 네이비/인디고 배경 (060d1f~0c1a35) + 인디고 틴트 글래스 카드",
+      "모든 카드/패널에 backdrop-filter: blur(16px) glassmorphism 적용",
+      "배경에 ambient orb 3개 position:fixed 배치 (pointer-events:none, z-index:0)",
+      "아이콘은 오직 lucide-react만 사용. 이모지 절대 사용 금지",
+      "폰트는 Nunito(display/heading) + Poppins(body) Google Fonts에서 import",
+      "borderRadius는 design.json의 borderRadius 값만 사용",
+      "glassmorphism 섹션의 값을 카드에 그대로 적용",
+      "shadows 값은 design.json의 것만 사용",
+      "버튼 CTA는 반드시 pill 형태 (border-radius: 9999px)",
+      "태그/뱃지는 tags.variants 섹션의 색상만 사용",
+      "완료율 링은 SVG stroke-dashoffset 방식으로 구현, 그라디언트 적용",
+      "테마 전환 시 transition: background 0.5s ease 적용",
+      "반응형: 모바일에서 사이드바 숨기고 하단 네비 표시",
+      "confetti는 canvas-confetti 라이브러리 사용, 테마별 색상 적용"
+    ]
+  }
+}
