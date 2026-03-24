@@ -1,12 +1,13 @@
 // 변경 이유: Supabase MCP로 확인한 테이블 구조에 맞춰 앱 전역에서 사용할 타입을 정의합니다.
 
-/** 중요도 1=높음, 2=중간, 3=낮음 */
+/** 중요도 1=낮음, 2=중간, 3=높음 */
 export type TodoImportance = 1 | 2 | 3;
 
 export interface Todo {
   id: string;
   user_id: string;
   title: string;
+  due_at: string | null;
   due_date: string | null;
   importance: TodoImportance;
   is_done: boolean;
@@ -15,12 +16,20 @@ export interface Todo {
   created_at: string;
 }
 
+/** 회의 확정 시 저장되는 슬롯 (teams.confirmed_slot) */
+export interface ConfirmedSlot {
+  date: string;
+  start: string;
+  end: string;
+}
+
 export interface Team {
   id: string;
   name: string;
   created_by: string;
   invite_code: string;
   created_at: string;
+  confirmed_slot?: ConfirmedSlot | null;
 }
 
 export interface TeamMember {

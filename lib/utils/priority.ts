@@ -3,9 +3,9 @@ import type { TodoImportance } from "@/types";
 
 export function getPriorityLabel(importance: TodoImportance): string {
   const labels: Record<TodoImportance, string> = {
-    1: "높음",
+    1: "낮음",
     2: "중간",
-    3: "낮음",
+    3: "높음",
   };
   return labels[importance];
 }

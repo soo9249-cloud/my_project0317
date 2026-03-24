@@ -20,8 +20,14 @@
 # production
 /build
 
+# webpack / tooling caches (로컬만, Git·배포 불필요)
+node_modules/.cache/
+.turbo
+.eslintcache
+
 # misc
 .DS_Store
+Thumbs.db
 *.pem
 /next-temp
 
@@ -39,4 +45,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+# next-env.d.ts 는 Next가 생성·동작에 쓰이므로 커밋하는 것이 일반적입니다.

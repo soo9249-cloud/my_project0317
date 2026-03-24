@@ -26,8 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" data-theme="light">
+    <html lang="ko" data-theme="light" suppressHydrationWarning>
       <body className={`${nunito.variable} ${poppins.variable} antialiased`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var s=localStorage.getItem("data-theme");var d=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",s||d);})();`,
+          }}
+        />
         <div className="ambient-orb ambient-orb--1" />
         <div className="ambient-orb ambient-orb--2" />
         <div className="ambient-orb ambient-orb--3" />

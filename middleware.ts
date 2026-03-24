@@ -8,8 +8,8 @@ export async function middleware(request: NextRequest) {
   });
 
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() {
@@ -33,7 +33,8 @@ export async function middleware(request: NextRequest) {
   const isProtectedRoute =
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/todos") ||
-    pathname.startsWith("/teams");
+    pathname.startsWith("/teams") ||
+    pathname.startsWith("/account");
 
   if (isProtectedRoute && !user) {
     return NextResponse.redirect(new URL("/login", request.url));
@@ -50,6 +51,8 @@ export const config = {
     "/dashboard/:path*",
     "/todos/:path*",
     "/teams/:path*",
+    "/account",
+    "/account/:path*",
     "/login",
     "/signup",
   ],
